@@ -90,3 +90,39 @@ Cette activité permet de comprendre l'établissement d'une connexion client/ser
 ## 5. Conclusion
 
 Cette activité permet d'étendre une application Client/Serveur TCP en ajoutant un service de calcul côté serveur. Elle permet également de comprendre l'échange d'entiers positifs et négatifs avec `DataInputStream` et `DataOutputStream`, ainsi que la fermeture correcte des sockets.
+
+## Activité 1-3 : Amélioration du service de calculatrice TCP
+
+### Étape 1 : Communication entre deux machines
+- Utilisation de `InetAddress` et `InetSocketAddress`.
+- Serveur TCP sur le port 5000.
+- Connexion du client à l'adresse IP du serveur.
+
+### Étape 2 : Calculatrice améliorée
+Le client propose quatre opérations :
+1. Addition
+2. Soustraction
+3. Multiplication
+4. Division
+
+Le client transmet l'opération choisie et les deux valeurs au serveur.
+Le serveur effectue le calcul et renvoie le résultat au client.
+
+### Tests réalisés
+- Addition : 10 + 5 = 15
+- Soustraction : 10 - 5 = 5
+- Multiplication : 10 * 5 = 50
+- Division : 10 / 5 = 2
+- Division par zéro : affichage d'un message d'erreur.
+
+### Captures d'écran
+
+#### 1. Exécution du serveur
+![Exécution du serveur](captures/server_tp3.png)
+
+#### 2. Exécution du client
+![Menu de la calculatrice](captures/client_tp3.png)
+
+#### 3. Test de calcul
+![Résultat du calcul](captures/test_calcul_tp3.png)
+
