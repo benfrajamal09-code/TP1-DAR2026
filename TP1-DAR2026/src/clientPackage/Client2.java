@@ -7,6 +7,7 @@ import java.net.Socket;
 import java.util.Scanner;
 public class Client2 {
     public static void main(String[] args) {
+    	int port = 5000;
         try {
             Socket socket = new Socket("localhost", 5000);
             System.out.println("Client connecté au serveur.");

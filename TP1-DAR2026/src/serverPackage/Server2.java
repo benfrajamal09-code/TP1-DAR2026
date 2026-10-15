@@ -7,6 +7,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 public class Server2 {
     public static void main(String[] args) {
+    	int port = 5000;
         try {
             ServerSocket serverSocket = new ServerSocket(5000);
             System.out.println("Serveur en attente du client...");
@@ -26,6 +27,7 @@ public class Server2 {
                 int resultat = x * 5;
                 System.out.println("Nombre reçu : " + x);
                 System.out.println("Résultat : " + resultat);
+
                 out.writeInt(resultat);
                 out.flush();
             }
