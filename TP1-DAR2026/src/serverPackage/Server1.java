@@ -1,22 +1,27 @@
 
-package clientPackage;
+package serverPackage;
 
 import java.io.IOException;
+import java.net.ServerSocket;
 import java.net.Socket;
 
-public class Client {
+public class Server1 {
 
     public static void main(String[] args) {
 
+        ServerSocket serverSocket = null;
         Socket socket = null;
 
         try {
-            System.out.println(
-                "Je suis un client pas encore connecte..."
-            );
-            socket = new Socket("127.0.0.1", 5000);
+            serverSocket = new ServerSocket(5000);
 
-            System.out.println("Je suis un client connecte");
+            System.out.println(
+                "Je suis un serveur en attente de la connexion d'un client"
+            );
+
+            socket = serverSocket.accept();
+
+            System.out.println("Un client est connecte");
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -25,6 +30,10 @@ public class Client {
             try {
                 if (socket != null) {
                     socket.close();
+                }
+
+                if (serverSocket != null) {
+                    serverSocket.close();
                 }
 
             } catch (IOException e) {
